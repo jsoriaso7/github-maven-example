@@ -6,6 +6,9 @@
 
         groupIdPath=${groupId//.//}
         
+	echo $groupId
+	echo $artifactId
+	echo $majorMinor
     
 
 
