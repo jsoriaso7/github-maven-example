@@ -13,7 +13,7 @@
 
 
 
-        DATOS=${curl 'http://admin:Deloitte01@localhost:8081/artifactory/api/search/versions?g='${groupId}'&a='${artifactId}'&repos=libs-release-local'}
+        DATOS=${curl "http://localhost:8081/artifactory/api/search/versions?g=$groupId&a=$artifactId&repos=libs-release-local"}
 
         echo $DATOS
 
