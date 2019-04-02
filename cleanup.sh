@@ -1,8 +1,8 @@
   #!/bin/bash
         
-        groupId=${groupId}
-        artifactId=${artifactId}
-        majorminor=${majorMinor}
+        groupId=$1
+        artifactId=$2
+        majorminor=$3
 
         groupIdPath=${groupId//.//}
         
