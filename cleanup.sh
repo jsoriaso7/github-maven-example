@@ -1,8 +1,8 @@
   #!/bin/bash
         
-        groupId=$1
-        artifactId=$2
-        majorminor=$3
+        groupIdLocal=$1
+        artifactIdLocal=$2
+        majorMinorLocal=$3
 
         groupIdPath=${groupId//.//}
         
@@ -11,9 +11,12 @@
 	echo $majorMinor
     
 
+	echo $groupIdLocal
+	echo $artifactIdLocal
+	echo $majorMinorLocal
 
 
-        DATOS=${curl "http://localhost:8081/artifactory/api/search/versions?g=$groupId&a=$artifactId&repos=libs-release-local"}
+        DATOS=${curl "http://localhost:8081/artifactory/api/search/versions?g=$groupIdLocal&a=$artifactIdLocal&repos=libs-release-local"}
 
         echo $DATOS
 
