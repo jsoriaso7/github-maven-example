@@ -18,7 +18,7 @@
         echo $majorMinorLocal
 	echo $username
 	
-	DATOS=$(curl -u "${username}:${pwd}" "http://localhost:8081/artifactory/api/search/versions?g=$groupIdLocal&a=$artifactIdLocal&repos=libs-release-local")
+	DATOS=$(curl -u "${username}:${pwd}" "http://artifactory:8081/artifactory/api/search/versions?g=$groupIdLocal&a=$artifactIdLocal&repos=libs-release-local")
         #DATOS="${curl http://localhost:8081/artifactory/api/search/versions?g=$groupIdLocal&a=$artifactIdLocal&repos=libs-release-local}"
 
         echo $DATOS
@@ -33,7 +33,7 @@
                 }
 
                 version_to_remove=$(echo $(_jq '.version'))
-                curl -i -X DELETE -u "${username}:${pwd}" 'http://localhost:8081/artifactory/libs-release-local/'$groupIdPath'/'$artifactId'/'$version_to_remove
+                curl -i -X DELETE -u "${username}:${pwd}" 'http://artifactory:8081/artifactory/libs-release-local/'$groupIdPath'/'$artifactId'/'$version_to_remove
         done
 
 
