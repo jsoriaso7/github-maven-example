@@ -1,27 +1,9 @@
 #!/bin/bash
 
-        groupIdLocal=$1
-        artifactIdLocal=$2
-        majorMinorLocal=$3
-	username=$4
-	pwd=$5
 
         groupIdPath=${groupId//.//}
-
-        echo $groupId
-        echo $artifactId
-        echo $majorMinor
-    
-
-        echo $groupIdLocal
-        echo $artifactIdLocal
-        echo $majorMinorLocal
-	echo $usernameCreds
-	echo $passwordCreds
 	
-	echo ${env.ARTIFACTORY_USER}
-	
-	DATOS=$(curl -u "$usernameCreds:$passwordCreds" "http://artifactory:8081/artifactory/api/search/versions?g=$groupIdLocal&a=$artifactIdLocal&repos=libs-release-local")
+	DATOS=$(curl -u "$usernameCreds:$passwordCreds" "http://artifactory:8081/artifactory/api/search/versions?g=$groupId&a=$artifactId&repos=libs-release-local")
         #DATOS="${curl http://localhost:8081/artifactory/api/search/versions?g=$groupIdLocal&a=$artifactIdLocal&repos=libs-release-local}"
 
         echo $DATOS
