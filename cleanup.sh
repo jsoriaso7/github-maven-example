@@ -17,8 +17,9 @@
         echo $artifactIdLocal
         echo $majorMinorLocal
 	echo $username
+	echo $pwd
 	
-	echo $env.ARTIFACTORY_USER
+	echo ${env.ARTIFACTORY_USER}
 	
 	DATOS=$(curl -u "$env.ARTIFACTORY_USER:$env.ARTIFACTORY_PASS" "http://artifactory:8081/artifactory/api/search/versions?g=$groupIdLocal&a=$artifactIdLocal&repos=libs-release-local")
         #DATOS="${curl http://localhost:8081/artifactory/api/search/versions?g=$groupIdLocal&a=$artifactIdLocal&repos=libs-release-local}"
